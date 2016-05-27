@@ -70,6 +70,7 @@
  * can define lists with ranges for sequences e.g. `[1..20]`
  * ranges accept a step e.g. `[2,4..20]`
  * to reverse a range do `[20,19..1]`
+ * you can do infinite lists `[1..]`
 
  * `head x` returns head of list (1st element)
  * `tail x` returns list with head chopped off
@@ -85,4 +86,16 @@
  * `sum x` returns sum of items
  * `product x` returns product of items
  * `elem y x` returns True if y is in list x usually done infix: ``y `elem` x``
+ * `cycle x` takes a list and cycles it into an infinite list
+ * `repeat x` takes an element and repeats it into an infinite list
+ * `replicate y x` creates a list with y number of elements x
  
+ ### List comprehensions
+
+ like set comprehensions in maths:
+ `[x*2 | x <- [1..10]]` this will take the list 1 to 10 and apply x * 2 to each element
+ can add a predicate as well:
+ `[x*2 | x <- [1..10], x*2 >= 12]` this will only output the items from 12 onwards
+can have multiple comma separated predicates (all must be satisfied) 
+can also have multiple lists to draw from (`x <- [], y <- []`) - will output the product of all drawn lists based on the output func
+
